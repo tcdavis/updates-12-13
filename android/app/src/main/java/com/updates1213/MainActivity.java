@@ -1,15 +1,20 @@
 package com.updates1213;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 import expo.modules.ReactActivityDelegateWrapper;
 
-public class MainActivity extends ReactActivity {
+import expo.modules.devlauncher.DevLauncherController;
+import expo.modules.devmenu.react.DevMenuAwareReactActivity;
+
+public class MainActivity extends DevMenuAwareReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // Set the theme to AppTheme BEFORE onCreate to support 
@@ -30,10 +35,27 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
-    return new ReactActivityDelegateWrapper(this,
-      new ReactActivityDelegate(this, getMainComponentName())
-    );
+      return DevLauncherController.wrapReactActivityDelegate(
+        this,
+        () -> new ReactActivityDelegateWrapper(
+          this,
+          new ReactActivityDelegate(this, getMainComponentName()) {
+            @Override
+            protected ReactRootView createRootView() {
+              return new RNGestureHandlerEnabledRootView(MainActivity.this);
+            }
+          }
+        )
+      );
   }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        if (DevLauncherController.tryToHandleIntent(this, intent)) {
+           return;
+        }
+        super.onNewIntent(intent);
+    }
 
   /**
    * Align the back button behavior with Android S

@@ -5,7 +5,10 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "updates": {
+      "url": "https://u.expo.dev/8ac400b2-5f72-46b8-b649-f709f8e2f750"
+    }
   },
   "name": "updates-12-13"
 }

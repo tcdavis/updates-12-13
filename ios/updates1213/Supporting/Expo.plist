@@ -5,7 +5,7 @@
     <key>EXUpdatesSDKVersion</key>
     <string>44.0.0</string>
     <key>EXUpdatesURL</key>
-    <string>https://exp.host/@thetc/updates-12-13</string>
+    <string>https://u.expo.dev/8ac400b2-5f72-46b8-b649-f709f8e2f750</string>
     <key>EXUpdatesEnabled</key>
     <true/>
     <key>EXUpdatesCheckOnLaunch</key>
