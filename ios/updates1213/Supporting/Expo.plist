@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>EXUpdatesSDKVersion</key>
-    <string>44.0.0</string>
     <key>EXUpdatesURL</key>
     <string>https://u.expo.dev/8ac400b2-5f72-46b8-b649-f709f8e2f750</string>
     <key>EXUpdatesEnabled</key>
@@ -12,5 +10,7 @@
     <string>ALWAYS</string>
     <key>EXUpdatesLaunchWaitMs</key>
     <integer>0</integer>
+    <key>EXUpdatesRuntimeVersion</key>
+    <string>1.0.0</string>
   </dict>
 </plist>
